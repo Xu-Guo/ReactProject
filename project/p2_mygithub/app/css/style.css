@@ -1,3 +1,11 @@
+img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 50%;
+    max-width: 50%;
+}
+
 .label{
 	margin-right: 10px; 
 }
