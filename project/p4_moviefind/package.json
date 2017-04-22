@@ -1,0 +1,23 @@
+{
+  "name": "p4_moviefind",
+  "version": "1.0.0",
+  "description": "Simple movie info finder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xuguo",
+  "license": "ISC",
+  "devDependencies": {
+	  "browserify":"14.3.0",
+	  "flux":"3.1.2",
+	  "gulp":"3.9.1",
+	  "reactify":"1.1.1",
+	  "vinyl-source-stream": "*",
+	  "object-assign": "*"
+  },
+  "dependencies": {
+	  "reacat": "*",
+	  "react-dom": "*"
+  }
+}
