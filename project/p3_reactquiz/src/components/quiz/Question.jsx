@@ -3,7 +3,14 @@ import ReactDOM from 'react-dom';
 
 
 class Question extends Component{
-	onChange(){
+	onChange(e){
+		e.preventDefault();
+		const {setCurrent, setScore, question} = this.props;
+		let selected = e.target.value;
+		if(selected == question.correct){
+			setScore(this.props.score + 1);
+		}
+		setCurrent(this.props.current + 1);
 		return;
 	}
 
