@@ -1,0 +1,24 @@
+{
+  "name": "contactlist",
+  "version": "1.0.0",
+  "description": "Simple contact list application Flux and React.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xuguo",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "*",
+    "flux": "*",
+    "gulp": "*",
+    "reactify": "*",
+    "vinyl-source-stream": "*",
+    "object-assign": "*",
+    "create-react-class": "*"
+  },
+  "dependencies":{
+    "react":"*",
+    "react-dom": "*"
+  }
+}
