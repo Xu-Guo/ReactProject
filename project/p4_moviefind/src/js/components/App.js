@@ -4,6 +4,7 @@ var createReactClass = require('create-react-class');
 var AppActions = require('../actions/AppActions.js');
 var AppStore = require('../stores/AppStore');
 var SearchForm = require('./SearchForm.js');
+var MovieResults = require('./MovieResults.js');
 
 function getAppState(){
 	return {
@@ -25,9 +26,15 @@ var App = createReactClass({
 	},
 
 	render : function(){
+		if(this.state.movies == ''){
+			var movieResults = '';
+		} else {
+			var movieResults = <MovieResults movies={this.state.movies}/>
+		}
 		return(
 			<div>
 				<SearchForm />
+				{movieResults}
 			</div>
 		)
 	},
