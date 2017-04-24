@@ -1,5 +1,4 @@
 var React = require('react');
-var createReactClass = require('create-react-class');
 //components
 var AppActions = require('../actions/AppActions');
 var AppStore = require('../stores/AppStore');
@@ -11,7 +10,7 @@ function getAppState(){
 	}
 }
 
-var App = createReactClass({
+var App = React.createClass({
 	getInitialState: function(){
 		return getAppState();
 	},

@@ -6,7 +6,7 @@ var AppActions = require('../actions/AppActions');
 var AppStore = require('../stores/AppStore');
 
 
-var AddForm = createReactClass({
+var AddForm = React.createClass({
 	
 	render: function(){
 		return(
