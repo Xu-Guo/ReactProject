@@ -17,8 +17,10 @@
     "object-assign": "*",
     "create-react-class": "*"
   },
-  "dependencies":{
-    "react":"*",
+  "dependencies": {
+    "firebase": "^3.8.0",
+    "gulp": "^3.9.1",
+    "react": "*",
     "react-dom": "*"
   }
 }

@@ -38,6 +38,8 @@ AppDispatcher.register(function(payload){
 
 			//store Save
 			AppStore.saveContact(action.contact);
+			//save to firebase API
+			AppAPI.saveContact(action.contact);
 
 			//Emit Change
 			AppStore.emit(CHANGE_EVENT);
