@@ -1,5 +1,6 @@
-var AppActions = require('../actions/AppActions')
 var firebase = require('firebase')
+var AppActions = require('../actions/AppActions')
+
 
 // Initialize Firebase
 var config = {
@@ -9,6 +10,7 @@ var config = {
 	databaseURL: "https://contactlist-f2acd.firebaseio.com/",
   	storageBucket: "contactlist-f2acd.appspot.com"
 };
+console.log("here");
 firebase.initializeApp(config);
 
 module.exports = {
@@ -17,6 +19,26 @@ module.exports = {
 		this.firebaseRef = firebase.database().ref().child("contacts");
 		this.firebaseRef.push({
 			contact : contact
+		});
+	},
+
+	getContacts : function(){
+		this.firebaseRef = firebase.database().ref().child("contacts");
+		this.firebaseRef.once("value" , function(snapshot){
+			var contacts = [];
+			snapshot.forEach(function(childSnapshot){
+				var contact = {
+					id : childSnapshot.key,
+					name : childSnapshot.val().contact.name,
+					phone : childSnapshot.val().contact.phone,
+					email : childSnapshot.val().contact.email
+				}
+				contacts.push(contact);
+				
+			});
+			console.log(contacts);
+			AppActions.receiveContacts(contacts);
+			
 		});
 	}
 }

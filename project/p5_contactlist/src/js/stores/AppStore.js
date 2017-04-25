@@ -2,7 +2,7 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var AppConstants = require('../constants/AppConstants');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
-var AppAPI = require('../utils/AppAPI.js');
+var AppAPI = require('../utils/appAPI');
 
 var CHANGE_EVENT = 'change';
 
@@ -16,6 +16,10 @@ var AppStore = assign({}, EventEmitter.prototype, {
 
 	saveContact : function(contact){
 		_contacts.push(contact);
+	},
+
+	setContacts : function(contacts){
+		_contacts = contacts;
 	},
 
 	emitChange: function(){
@@ -41,6 +45,15 @@ AppDispatcher.register(function(payload){
 			//save to firebase API
 			AppAPI.saveContact(action.contact);
 
+			//Emit Change
+			AppStore.emit(CHANGE_EVENT);
+			break;
+
+		case  AppConstants.RECEIVE_CONTACTS :
+			console.log('Receiving Contacts...');
+
+			//store Save
+			AppStore.setContacts(action.contacts);
 			//Emit Change
 			AppStore.emit(CHANGE_EVENT);
 	}

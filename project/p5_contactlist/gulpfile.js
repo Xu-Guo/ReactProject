@@ -9,7 +9,7 @@ gulp.task('browserify', function(){
 		.bundle()
 		.pipe(source('main.js'))
 		.pipe(gulp.dest('dist/js'));
-});
+})
 
 gulp.task('copy', function(){
 	gulp.src('src/index.html')
@@ -18,7 +18,7 @@ gulp.task('copy', function(){
 		.pipe(gulp.dest('dist/css'));
 	gulp.src('src/js/vendors/*.*')
 		.pipe(gulp.dest('dist/js'));
-});
+})
 
 gulp.task('default', ['browserify', 'copy'], function(){
 	return gulp.watch('src/**/*.*', ['browserify', 'copy']);

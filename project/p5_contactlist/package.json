@@ -1,12 +1,12 @@
 {
   "name": "contactlist",
   "version": "1.0.0",
-  "description": "Simple contact list application Flux and React.js",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "xuguo",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "browserify": "*",
@@ -14,12 +14,11 @@
     "gulp": "*",
     "reactify": "*",
     "vinyl-source-stream": "*",
-    "object-assign": "*",
-    "create-react-class": "*"
+    "object-assign": "*"
   },
   "dependencies": {
+    "create-react-class": "^15.5.2",
     "firebase": "^3.8.0",
-    "gulp": "^3.9.1",
     "react": "*",
     "react-dom": "*"
   }
