@@ -18,6 +18,13 @@ var AppActions = {
 		});
 	},
 
+	removeContact : function(contactId){
+		AppDispatcher.handleViewAction({
+			actionType : AppConstants.REMOVE_CONTACT,
+			contactId : contactId
+		});
+	}
+
 }
 
 module.exports = AppActions;

@@ -14,10 +14,14 @@ var Contact = createReactClass({
 				<td>{this.props.contact.email}</td>
 				<td>
 					<a href="#" className="btn btn-primary" onClick={this.handleEdit}>Edit</a>
-					<a href="#" className="btn btn-danger" onClick={this.handleRemove}>Remove</a>
+					<a href="#" className="btn btn-danger" onClick={this.handleRemove.bind(this, this.props.contact.id)}>Remove</a>
 				</td>
 			</tr>
 		);
+	},
+
+	handleRemove : function(i, j){
+		AppActions.removeContact(i);
 	}
 })
 

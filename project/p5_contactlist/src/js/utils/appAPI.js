@@ -40,5 +40,10 @@ module.exports = {
 			AppActions.receiveContacts(contacts);
 			
 		});
+	},
+
+	removeContact : function(contactId){
+		this.firebaseRef = firebase.database().ref().child("contacts/"+contactId);
+		this.firebaseRef.remove();
 	}
 }
