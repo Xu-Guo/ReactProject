@@ -45,5 +45,17 @@ module.exports = {
 	removeContact : function(contactId){
 		this.firebaseRef = firebase.database().ref().child("contacts/"+contactId);
 		this.firebaseRef.remove();
+	},
+
+	updateContact : function(contact){
+		var id = contact.id;
+		var updatedContact = {
+			name : contact.name,
+			phone : contact.phone,
+			email : contact.email
+		}
+
+		this.firebaseRef = firebase.database().ref().child("contacts/"+contact.id+'/contact');
+		this.firebaseRef.update(updatedContact);
 	}
 }

@@ -23,6 +23,20 @@ var AppActions = {
 			actionType : AppConstants.REMOVE_CONTACT,
 			contactId : contactId
 		});
+	},
+
+	updateContact : function(contact){
+		AppDispatcher.handleViewAction({
+			actionType : AppConstants.UPDATE_CONTACT,
+			contact : contact
+		});
+	},
+
+	editContact : function(contact){
+		AppDispatcher.handleViewAction({
+			actionType : AppConstants.EDIT_CONTACT,
+			contact : contact
+		});
 	}
 
 }
